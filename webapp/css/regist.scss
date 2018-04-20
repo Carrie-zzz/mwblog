@@ -2,62 +2,62 @@
 @import "property";
 @import "mixin";
 .regist{
-    .header{
-      width: 100%;
-      height: 60px;
-      .center{
-        @include box-center(720px);
-        img{
-          width: 240px;
-          float: left;
-        }
-        div{
-          width: 150px;
-          height: 30px;
-          border-left:1px solid gray;
-          float: left;
-          line-height: 30px;
-          text-align: center;
-          margin-top: 15px;
-          font-size: 23px;
-        }
-        a{
-          float: right;
-          color: black;
-          font-size: 15px;
-          margin-top: 20px;
-          text-decoration: none;
-          &:hover{
-            color:#22AC69;
-          }
+  .header{
+    width: 100%;
+    height: 60px;
+    .center{
+      @include box-center(720px);
+      img{
+        width: 240px;
+        float: left;
+      }
+      div{
+        width: 150px;
+        height: 30px;
+        border-left:1px solid gray;
+        float: left;
+        line-height: 30px;
+        text-align: center;
+        margin-top: 15px;
+        font-size: 23px;
+      }
+      a{
+        float: right;
+        color: black;
+        font-size: 15px;
+        margin-top: 20px;
+        text-decoration: none;
+        &:hover{
+          color:#22AC69;
         }
       }
     }
-    .content{
-      width: 100%;
-      height: 560px;
-      background-color: rgb(232,232,232);
-      padding: 25px 0 0 0;
-      .box{
-        @include box-center(720px);
-        background-color: white;
-        .top{
-          width: 100%;
-          height: 15%;
-          border-bottom: 3px solid rgb(232,232,232);
-          text-align: center;
-          font-size: 20px;
-          line-height: 75px;
-          color: $button-bg-color;
-          font-weight: bolder;
-        }
-        .bottom{
-          width: 100%;
-          height: 85%;
-          padding-top: 30px;
-        }
+  }
+  .content{
+    width: 100%;
+    height: 560px;
+    background-color: rgb(232,232,232);
+    padding: 25px 0 0 0;
+    .box{
+      @include box-center(720px);
+      background-color: white;
+      .top{
+        width: 100%;
+        height: 15%;
+        border-bottom: 3px solid rgb(232,232,232);
+        text-align: center;
+        font-size: 20px;
+        line-height: 75px;
+        color: $button-bg-color;
+        font-weight: bolder;
+      }
+      .bottom{
+        width: 100%;
+        height: 85%;
+        padding-top: 30px;
       }
     }
+  }
 }
 
 .btn-default,.btn-success{
@@ -67,4 +67,18 @@
   float: right;
   line-height: 29px;
   font-size: 15px;
+}
+.form-group{
+  .text{
+    color: $button-bg-color;
+    font-family: "楷体";
+    font-weight: bold;
+  }
+}
+.warning-bar{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: none;
 }

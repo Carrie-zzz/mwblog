@@ -17,4 +17,17 @@ function queryUserByName(name,callback) {
         callback(results);
     });
 }
+
+function insertUserInfo(json,callback){
+    let username = json.username;
+    let pwd = json.pwd;
+    let mail = json.mail;
+    let telephone = json.tel==undefined ? null : json.tel;
+    let age = json.age==undefined ? null : json.age;
+    let address = json.address==undefined ? null : json.address;
+    let array = [username,pwd,mail,telephone,age,address];
+    connection.query("insert into userinfo(name,pwd,mail,telephone,age,address) values(?,?,?,?,?,?)",array,function (err,results,fields) {
+        callback(results);
+    });
+}
 module.exports = {queryUserByName};

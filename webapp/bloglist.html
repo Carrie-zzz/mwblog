@@ -18,6 +18,13 @@
     <script src="./bower_components/html5shiv/dist/html5shiv.min.js"></script>
     <script src="./bower_components/respond/dest/respond.min.js"></script>
     <![endif]-->
+    <script>
+        //查看当前本地是否有登录信息
+        var value = window.localStorage.getItem("userid");
+        if(value==null||value==undefined){
+            window.location.href = "./login.html";
+        }
+    </script>
 </head>
 <body>
     <div class="frame">
@@ -48,12 +55,12 @@
                             <button type="button" class="btn btn-default" id="public_blog">发表博客</button>
                         </li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">左治民 <span class="caret"></span></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="name"> <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">我的博客列表</a></li>
                                 <li><a href="#">修改个人信息</a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="#">注销用户</a></li>
+                                <li><a href="javascript:loginout()">注销用户</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -141,6 +148,8 @@
     <script src="./bower_components/jquery/dist/jquery.min.js"></script>
     <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
     <script src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/bloglist.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             $("#public_blog").on("click",function (event) {

@@ -57,3 +57,10 @@ a.regist_link:hover{
   background-color: $button-bg-color;
   border-color: #28a745;
 }
+.warningbar{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  display: none;
+}

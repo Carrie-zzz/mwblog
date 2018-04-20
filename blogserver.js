@@ -6,7 +6,8 @@ const ht = require("http"),
     formidable = require("formidable");
 //引入项目模块
 const tools = require("./common/tools"),
-    userdao = require("./dao/userinfodao");
+    userctl = require("./control/usercontrol"),
+    blogctl = require("./control/blogcontrol");
 
 const server = ht.createServer(function (req, res) {
     let path = req.url;
@@ -18,11 +19,19 @@ const server = ht.createServer(function (req, res) {
         //1.获取请求的参数
         let form = new formidable.IncomingForm();
         form.parse(req,function (err, fields,files) {
-            //获取到了请求的参数
-            userdao.queryUserByName(fields.username,function(results){
-                //做校验操作
-
-            });
+            userctl.logincheck(fields,res);
+        });
+    }else if(path.pathname === "/checknameaction"){
+        //1.获取请求的参数
+        let form = new formidable.IncomingForm();
+        form.parse(req,function (err, fields,files) {
+            userctl.registcheck(fields,res);
+        });
+    }else if(path.pathname === "/initlistaction"){
+        //1.获取请求的参数
+        let form = new formidable.IncomingForm();
+        form.parse(req,function (err, fields,files) {
+            blogctl.initListData(fields,res);
         });
     }else{
         tools.sendFile(pt.join(__dirname,"webapp",path.pathname),res);

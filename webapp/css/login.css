@@ -49,4 +49,11 @@ a.regist_link:hover {
   background-color: #5cb85c;
   border-color: #28a745; }
 
+.warningbar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  display: none; }
+
 /*# sourceMappingURL=login.css.map */
